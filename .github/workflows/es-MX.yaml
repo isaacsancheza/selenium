@@ -1,0 +1,28 @@
+name: es-MX
+
+on:
+  push:
+    paths:
+      - 'es-MX/**'
+      - '!es-MX/README.md'
+      - '!es-MX/.dockerignore'
+    branches:
+      - master
+  workflow_run:
+    types:
+      - completed
+    workflows:
+      - latest
+    branches:
+      - master
+  workflow_dispatch:
+
+jobs:
+  build-and-push:
+    permissions:
+      contents: read
+      packages: write
+    uses: isaacsancheza/selenium/.github/workflows/build-and-push.yaml@master
+    with:
+      tag: es-MX
+      context: es-MX

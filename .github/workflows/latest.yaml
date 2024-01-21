@@ -1,0 +1,21 @@
+name: latest
+
+on:
+  push:
+    paths:
+      - 'latest/**'
+      - '!latest/README.md'
+      - '!latest/.dockerignore'
+    branches:
+      - master
+  workflow_dispatch:
+
+jobs:
+  build-and-push:
+    permissions:
+      contents: read
+      packages: write
+    uses: isaacsancheza/selenium/.github/workflows/build-and-push.yaml@master
+    with:
+      tag: latest
+      context: latest
