@@ -22,7 +22,7 @@ jobs:
     permissions:
       contents: read
       packages: write
-    uses: isaacsancheza/selenium/.github/workflows/build-and-push.yaml@master
+    uses: isaacsancheza/workflows/.github/workflows/build-and-push.yaml@master
     with:
       tag: es-MX
       context: es-MX
